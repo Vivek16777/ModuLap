@@ -11,9 +11,19 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
-
+const configRoutes = require("./routes/configRoutes");
+app.use("/api/config", configRoutes);
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
+const componentRoutes = require("./routes/componentRoutes");
+app.use("/api/components", componentRoutes);
+const cartRoutes = require("./routes/cartRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+app.use("/api/cart", cartRoutes);
+app.use("/api/orders", orderRoutes);
 // Test route
 app.get("/", (req, res) => {
   res.send("ModuLap API Running...");
